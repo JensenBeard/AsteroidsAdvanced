@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject fireball;
     private float thrust = 6f;
     private float rotationSpeed = -180f;
     private float maxSpeed = 4.5f;
