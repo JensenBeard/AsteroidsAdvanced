@@ -18,6 +18,8 @@ public class Asteroids : MonoBehaviour
     public GameObject asteroidsMedium;
     public GameObject asteroidsSmall;
 
+    public int points;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class Asteroids : MonoBehaviour
     {
         if (collision.CompareTag("Bullet")) 
         {
+            Destroy(collision.gameObject);
             //Check Asteroid Size and spawn next size
             if (asteroidStage == 3) 
             {
@@ -69,7 +72,6 @@ public class Asteroids : MonoBehaviour
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
 
-                
             }
             else if (asteroidStage == 2) 
             {
@@ -82,7 +84,7 @@ public class Asteroids : MonoBehaviour
                 
             }
             Destroy(gameObject);
-            Destroy(collision.gameObject);
+            
         }
     }
 }

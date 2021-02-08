@@ -97,9 +97,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0062958, y: -0.037774503}
+  m_Offset: {x: -0.14206553, y: -0.037774503}
   serializedVersion: 2
-  m_Radius: 0.8496481
+  m_Radius: 0.7138784
 --- !u!50 &5245370308384480993
 Rigidbody2D:
   serializedVersion: 4
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bf52f8a84e3424589c53a87fe4ff2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 700
+  maxThrust: 500
   maxTorque: 100
   rb: {fileID: 5245370308384480993}
   screenTop: 11
@@ -144,3 +144,4 @@ MonoBehaviour:
   asteroidsMedium: {fileID: 5972618310358419916}
   asteroidsSmall: {fileID: 3208673458765260404, guid: 46e6a82119064cb41ac2d59f5b291071,
     type: 3}
+  points: 10
