@@ -19,10 +19,13 @@ public class Asteroids : MonoBehaviour
     public GameObject asteroidsSmall;
 
     public int points;
+    public GameObject controller;
 
     // Start is called before the first frame update
     void Start()
     {
+        controller = GameObject.FindWithTag("GameController");
+
         Vector2 thrust = new Vector2(Random.Range(-maxThrust, maxThrust), Random.Range(-maxThrust, maxThrust));
         float torque = Random.Range(-maxTorque, maxTorque);
 
@@ -83,6 +86,8 @@ public class Asteroids : MonoBehaviour
             { 
                 
             }
+            controller.SendMessage("ScorePoints", points);
+            
             Destroy(gameObject);
             
         }

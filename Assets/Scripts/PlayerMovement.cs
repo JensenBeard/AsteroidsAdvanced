@@ -65,11 +65,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-   /* private void ResetShip()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        transform.position = new Vector2(0f, 0f);
-        transform.eulerAngles = new Vector3(0, 180f, 0);
-        rb.velocity = new Vector3(0f, 0f, 0f);
-        rb.angularVelocity = new Vector3(0f, 0f, 0f);
-    }*/
+        ResetShip();
+    }
+     private void ResetShip()
+     {
+         transform.position = new Vector2(0f, 0f);
+         transform.eulerAngles = new Vector3(0, 0f, 0);
+         rb.velocity = new Vector3(0f, 0f, 0f);
+         rb.angularVelocity = 0;
+     }
 }
