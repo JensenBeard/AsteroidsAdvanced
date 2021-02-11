@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public int score;
-    public int lives;
-    public int numAsteroids;
-    public GameObject AsteroidLarge;
+    [SerializeField]private int score;
+    [SerializeField]private int lives;
+    [SerializeField]private int numAsteroids;
+    [SerializeField]public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
     public GameObject AsteroidSmall;
 
@@ -38,8 +38,21 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < numAsteroids; i++) 
         {
-            Instantiate(AsteroidLarge, new Vector3(Random.Range(-9.0f, 9.0f), Random.Range(-6.0f, 6.0f), 0), Quaternion.Euler(0, 0, Random.Range(-0.0f, 359.0f)));
+            float[] location = SafeSpawnAsteroids();
+
+            Instantiate(AsteroidLarge, new Vector3(location[0], location[1], 0), Quaternion.Euler(0, 0, Random.Range(-0.0f, 359.0f)));
         }
+    }
+
+    float[] SafeSpawnAsteroids() 
+    {
+        float width = Random.Range(-16.0f, 16.0f);
+        float height = Random.Range(-8.0f, 8.0f);
+        if ((width < 1 && width > -1)&&(height < 1 && height >-1)) {
+            SafeSpawnAsteroids();
+        }
+        float[] location = new float[] { width, height };
+        return location;
     }
 
 }
