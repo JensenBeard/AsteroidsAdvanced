@@ -5,20 +5,25 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField]private int score;
-    [SerializeField]private int lives;
-    [SerializeField]private int numAsteroids;
-    [SerializeField]public GameObject AsteroidLarge;
+    [SerializeField] private int score;
+    [SerializeField] private int health;
+    [SerializeField] private int waves;
+    [SerializeField] private int numAsteroids;
+
+    public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
     public GameObject AsteroidSmall;
 
     public Text scoreText;
+    public Text livesText;
 
     void Start()
     {
         score = 0;
-        numAsteroids = 5;
+        numAsteroids = 10;
+        health = 100;
         scoreText.text = "Score: " + score;
+        livesText.text = "HP: " + health;
         SpawnAsteroids();
     }
 
@@ -55,4 +60,9 @@ public class GameController : MonoBehaviour
         return location;
     }
 
+    public void playerDamage(int damage) 
+    {
+        health -= damage;
+        livesText.text = "HP: " + health;
+    }   
 }

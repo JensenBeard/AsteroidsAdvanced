@@ -18,6 +18,7 @@ public class Asteroids : MonoBehaviour
     public GameObject asteroidsMedium;
     public GameObject asteroidsSmall;
 
+    private int damage = 0;
     public int points;
     public GameObject controller;
 
@@ -65,31 +66,54 @@ public class Asteroids : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet")) 
+        if (collision.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject);
             //Check Asteroid Size and spawn next size
-            if (asteroidStage == 3) 
+            if (asteroidStage == 3)
             {
-                 //Spawn 2 med
+                //Spawn 2 med
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
 
             }
-            else if (asteroidStage == 2) 
+            else if (asteroidStage == 2)
             {
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
 
             }
-            else if (asteroidStage == 1) 
-            { 
-                
+            else if (asteroidStage == 1)
+            {
+
             }
             controller.SendMessage("ScorePoints", points);
-            
+
             Destroy(gameObject);
-            
+
+        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (asteroidStage == 3)
+            {
+                damage = 10;
+
+            }
+            else if (asteroidStage == 2)
+            {
+                damage = 15;
+
+            }
+            else if (asteroidStage == 1)
+            {
+                damage = 20;
+            }
+            controller.SendMessage("playerDamage", damage);
         }
     }
 }

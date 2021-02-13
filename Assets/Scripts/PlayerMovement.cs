@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float thrust = 6f;
     private float rotationSpeed = -180f;
     private float maxSpeed = 4.5f;
+    public GameObject controller;
 
     private Camera mainCam;
 
@@ -67,7 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ResetShip();
+
+        //ResetShip();
     }
      private void ResetShip()
      {
