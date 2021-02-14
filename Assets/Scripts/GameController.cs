@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
     public GameObject AsteroidSmall;
+    public GameObject playerObject;
+    public GameOver GameOverScreen;
 
     public Text scoreText;
     public Text livesText;
@@ -63,6 +65,18 @@ public class GameController : MonoBehaviour
     public void playerDamage(int damage) 
     {
         health -= damage;
+        if (health <= 0) {
+            health = 0;
+            playerObject.GetComponent<PlayerMovement>().ResetShip();
+            Time.timeScale = 0;
+            GameOverFun();
+        }
         livesText.text = "HP: " + health;
-    }   
+
+    }
+
+    public void GameOverFun() 
+    {
+        GameOverScreen.Setup(score);
+    }
 }

@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && timeUntilFire < Time.time)
+        if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
         {
             Fire();
             timeUntilFire = Time.time + fireRate;
