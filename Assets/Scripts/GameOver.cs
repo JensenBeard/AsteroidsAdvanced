@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+
     public Text pointsText;
     public void Setup(int score) 
     {
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
     }
+
     public void RestartGame()
     {
         SceneManager.LoadScene("SpaceTheFinalFronteer");
+        Debug.Log("testing");
     }
+
 }
