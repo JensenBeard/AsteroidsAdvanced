@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         score = 0;
-        numAsteroids = 10;
+        numAsteroids = 5;
         health = 100;
         scoreText.text = "Score: " + score;
         livesText.text = "HP: " + health;
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < numAsteroids; i++) 
         {
             float[] location = SafeSpawnAsteroids();
-
+            Debug.Log("Testing = " + i);
             Instantiate(AsteroidLarge, new Vector3(location[0], location[1], 0), Quaternion.Euler(0, 0, Random.Range(-0.0f, 359.0f)));
         }
     }
@@ -79,4 +79,6 @@ public class GameController : MonoBehaviour
     {
         GameOverScreen.Setup(score);
     }
+
+
 }

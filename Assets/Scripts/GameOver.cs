@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("SpaceTheFinalFronteer");
-        Debug.Log("testing");
+        Time.timeScale = 1;
     }
 
 }
