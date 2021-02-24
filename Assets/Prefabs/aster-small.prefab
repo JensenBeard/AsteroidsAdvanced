@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bf52f8a84e3424589c53a87fe4ff2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 500
+  maxThrust: 700
   maxTorque: 100
   rb: {fileID: 8286860654436347069}
   screenTop: 11
@@ -144,3 +144,4 @@ MonoBehaviour:
   asteroidsMedium: {fileID: 0}
   asteroidsSmall: {fileID: 0}
   points: 15
+  controller: {fileID: 0}
