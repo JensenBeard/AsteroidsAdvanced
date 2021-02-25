@@ -9,15 +9,19 @@ public class GameController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int waves;
     [SerializeField] private int numAsteroids;
+    [SerializeField] private int requiriedScore;
 
     public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
     public GameObject AsteroidSmall;
     public GameObject playerObject;
+    public GameObject LevelTrigger;
     public GameOver GameOverScreen;
 
     public Text scoreText;
     public Text livesText;
+
+    private bool objectiveComplete;
 
     [SerializeField] private float leftMax = 21f;
     [SerializeField] private float leftMin = 19F;
@@ -40,7 +44,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (objectiveComplete) 
+        {
+            LevelTrigger.SetActive(true);
+        }
     }
 
     void ScorePoints(int points) 
@@ -124,6 +131,18 @@ public class GameController : MonoBehaviour
     public void GameOverFun() 
     {
         GameOverScreen.Setup(score);
+    }
+
+    public bool getObjectiveComplete() {
+        return objectiveComplete;
+    }
+
+    public void setObjectiveComplete(bool status) {
+        objectiveComplete = status;
+    }
+
+    public int getScore() {
+        return score;
     }
 
 
