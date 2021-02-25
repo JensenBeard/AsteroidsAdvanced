@@ -19,6 +19,15 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text livesText;
 
+    [SerializeField] private float leftMax = 21f;
+    [SerializeField] private float leftMin = 19F;
+    [SerializeField] private float topMax = 12f;
+    [SerializeField] private float topMin = 11f;
+    [SerializeField] private float rightMax = -21f;
+    [SerializeField] private float rightMin = -19F;
+    [SerializeField] private float botMax = -12f;
+    [SerializeField] private float botMin = -11f;
+
     void Start()
     {
         score = 0;
@@ -51,11 +60,50 @@ public class GameController : MonoBehaviour
 
     float[] SafeSpawnAsteroids() 
     {
-        float width = Random.Range(-16.0f, 16.0f);
-        float height = Random.Range(-8.0f, 8.0f);
-        if ((width < 1 && width > -1)&&(height < 1 && height >-1)) {
-            SafeSpawnAsteroids();
+
+        float height;
+        float width;
+
+        int key = Random.Range(0, 1);
+        //Spawning top/bottom(1) or right/left(0)
+        if (key == 1)
+        {
+            //determine if spawning on top or bottom
+            // 1 = top
+            key = Random.Range(0, 1);
+            if (key == 1)
+            {
+                width = Random.Range(-18.0f, 18.0f);
+                height = Random.Range(topMin, topMax);
+
+            }
+            else
+            {
+                width = Random.Range(-18.0f, 18.0f);
+                height = Random.Range(botMin, botMax);
+
+            }
         }
+        else 
+        {
+            key = Random.Range(0, 1);
+            if (key == 1)
+            {
+                height = Random.Range(-12.0f, 12.0f);
+                width = Random.Range(leftMin, leftMax);
+
+            }
+            else
+            {
+                height = Random.Range(-12.0f, 12.0f);
+                width = Random.Range(rightMin, rightMax);
+
+            }
+        }
+
+            
+
+    
         float[] location = new float[] { width, height };
         return location;
     }

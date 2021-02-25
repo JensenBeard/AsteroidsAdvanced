@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Asteroids : MonoBehaviour
 {
-    public float maxThrust = 10f;
-    public float maxTorque = 3f;
+    [SerializeField] private float maxThrust = 10f;
+    [SerializeField] private float maxTorque = 3f;
     public Rigidbody2D rb;
     private Camera mainCam;
 
-    public float screenTop;
-    public float screenBottom;
-    public float screenLeft;
-    public float screenRight;
+    [SerializeField] private float screenTop;
+    [SerializeField] private float screenBottom;
+    [SerializeField] private float screenLeft;
+    [SerializeField] private float screenRight;
 
     public int asteroidStage; //3 = large 2 = med 1 = small
     public GameObject asteroidsMedium;

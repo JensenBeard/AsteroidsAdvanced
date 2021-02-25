@@ -136,10 +136,10 @@ MonoBehaviour:
   maxThrust: 700
   maxTorque: 100
   rb: {fileID: 8286860654436347069}
-  screenTop: 11
-  screenBottom: -11
-  screenLeft: -19
-  screenRight: 19
+  screenTop: 12
+  screenBottom: -12
+  screenLeft: -21
+  screenRight: 21
   asteroidStage: 1
   asteroidsMedium: {fileID: 0}
   asteroidsSmall: {fileID: 0}
