@@ -17,9 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
-        
+        playerSpawnLocation();
     }
 
     private void FixedUpdate()
@@ -27,6 +28,34 @@ public class PlayerMovement : MonoBehaviour
         ControlRocket();
         CheckPosition();
 
+    }
+
+    void playerSpawnLocation()
+    {
+        int direction = GameController.entranceDirection;
+        switch (direction) {
+            case 0:
+                transform.position = new Vector2(0, 10);
+                Debug.Log(direction + " 0");
+                break;
+            case 1:
+                transform.position = new Vector2(17, 0);
+                Debug.Log(direction + " 1");
+                break;
+            case 2:
+                transform.position = new Vector2(0, -10);
+                Debug.Log(direction + " 2");
+                break;
+            case 3:
+                transform.position = new Vector2(-17, 0);
+                Debug.Log(direction + " 3");
+                break;
+            default:
+                transform.position = new Vector2(0, 0);
+                Debug.Log(direction + " default");
+                break;
+        }
+        
     }
 
     private void ControlRocket() 
