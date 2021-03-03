@@ -35,19 +35,22 @@ public class PlayerMovement : MonoBehaviour
         int direction = GameController.entranceDirection;
         switch (direction) {
             case 0:
-                transform.position = new Vector2(0, 10);
+                transform.position = new Vector2(0, -10);
                 Debug.Log(direction + " 0");
                 break;
             case 1:
-                transform.position = new Vector2(17, 0);
+                transform.position = new Vector2(-17, 0);
+                transform.Rotate(new Vector3(0,0,270));
                 Debug.Log(direction + " 1");
                 break;
             case 2:
-                transform.position = new Vector2(0, -10);
+                transform.position = new Vector2(0, 10);
+                transform.Rotate(new Vector3(0, 0, 180));
                 Debug.Log(direction + " 2");
                 break;
             case 3:
-                transform.position = new Vector2(-17, 0);
+                transform.position = new Vector2(17, 0);
+                transform.Rotate(new Vector3(0, 0, 90));
                 Debug.Log(direction + " 3");
                 break;
             default:

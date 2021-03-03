@@ -9,6 +9,7 @@ public class TutorialScript : MonoBehaviour
     private int popUpIndex;
     public GameObject spawner;
     public GameObject ObjectivePrompt;
+    public GameObject NextLevelPrompt;
     public float waitTime = 2f;
 
     [SerializeField] private int maxScore = 425;
@@ -65,6 +66,7 @@ public class TutorialScript : MonoBehaviour
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
             ObjectivePrompt.SetActive(false);
+            NextLevelPrompt.SetActive(true);
         }
     }
 }
