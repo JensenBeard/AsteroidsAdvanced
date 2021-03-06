@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         int direction = GameController.entranceDirection;
         switch (direction) {
             case 0:
-                transform.position = new Vector2(0, -10);
+                transform.position = new Vector2(0, -9);
                 Debug.Log(direction + " 0");
                 break;
             case 1:
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log(direction + " 1");
                 break;
             case 2:
-                transform.position = new Vector2(0, 10);
+                transform.position = new Vector2(0, 9);
                 transform.Rotate(new Vector3(0, 0, 180));
                 Debug.Log(direction + " 2");
                 break;

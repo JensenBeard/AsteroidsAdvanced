@@ -8,16 +8,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private int score;
     [SerializeField] private int health;
     [SerializeField] private int waves;
-    [SerializeField] private int numAsteroids;
     [SerializeField] private int requiriedScore;
 
+    private int numAsteroids;
     public static int entranceDirection = -1;
 
     public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
     public GameObject AsteroidSmall;
     public GameObject playerObject;
-    public GameObject LevelTrigger;
+    public GameObject[] LevelTrigger;
     public GameOver GameOverScreen;
 
     public Text scoreText;
@@ -48,9 +48,12 @@ public class GameController : MonoBehaviour
     {
         if (objectiveComplete) 
         {
-            LevelTrigger.SetActive(true);
-            //set the direction the ship is travelling (0 top, 1 right, 2 bottom, 3, left)
-            entranceDirection = 1;
+            for (int i = 0; i < LevelTrigger.Length; i++) 
+            {
+                LevelTrigger[i].SetActive(true);
+            }
+            
+            
         }
     }
 
@@ -149,6 +152,11 @@ public class GameController : MonoBehaviour
 
     public int getScore() {
         return score;
+    }
+
+    public void setAsteroidNumber(int num) 
+    {
+        numAsteroids = num;
     }
 
 

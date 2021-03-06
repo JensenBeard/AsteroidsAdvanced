@@ -7,17 +7,19 @@ public class TutorialScript : MonoBehaviour
     public GameObject[] popUps;
     public GameObject gameController;
     private int popUpIndex;
-    public GameObject spawner;
+
     public GameObject ObjectivePrompt;
     public GameObject NextLevelPrompt;
     public float waitTime = 2f;
 
-    [SerializeField] private int maxScore = 425;
-
+    private int maxScore = 5*3 + 2*10*3 + 4*15*3;
+    private void Start()
+    {
+        gameController.GetComponent<GameController>().setAsteroidNumber(3);
+    }
     private void Update()
     {
         int curScore = gameController.GetComponent<GameController>().getScore();
-
         for (int i = 0; i < popUps.Length; i++)
         {
             if (i == popUpIndex)
@@ -49,7 +51,7 @@ public class TutorialScript : MonoBehaviour
         {
             if (waitTime <= 0)
             {
-                spawner.SetActive(true);
+                gameController.SetActive(true);
                 popUps[popUpIndex].SetActive(false);
                 ObjectivePrompt.SetActive(true);
             }
@@ -61,7 +63,7 @@ public class TutorialScript : MonoBehaviour
         } 
         
         
-        if (curScore == maxScore)
+        if (curScore >= maxScore)
         {
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);

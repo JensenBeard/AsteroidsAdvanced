@@ -153,7 +153,6 @@ MonoBehaviour:
   score: 0
   health: 0
   waves: 0
-  numAsteroids: 3
   requiriedScore: 0
   AsteroidLarge: {fileID: 4135379020291546098, guid: a2330f802f911d74f9d982cc37f095a4,
     type: 3}
@@ -162,7 +161,8 @@ MonoBehaviour:
   AsteroidSmall: {fileID: 3208673458765260404, guid: 46e6a82119064cb41ac2d59f5b291071,
     type: 3}
   playerObject: {fileID: 756776562}
-  LevelTrigger: {fileID: 750272233}
+  LevelTrigger:
+  - {fileID: 750272233}
   GameOverScreen: {fileID: 1473717015}
   scoreText: {fileID: 1476101714}
   livesText: {fileID: 524209553}
@@ -1004,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fd60cf80107bf46a1db888037b50f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entranceDirection: 1
 --- !u!1 &756776562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,7 +2003,6 @@ MonoBehaviour:
   ObjectivePrompt: {fileID: 211036340}
   NextLevelPrompt: {fileID: 1650434126}
   waitTime: 2
-  maxScore: 425
 --- !u!4 &1486541182
 Transform:
   m_ObjectHideFlags: 0
