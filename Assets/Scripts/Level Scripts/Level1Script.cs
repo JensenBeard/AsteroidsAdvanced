@@ -12,7 +12,7 @@ public class Level1Script : MonoBehaviour
     private void Start()
     {
         gameController.GetComponent<GameController>().setAsteroidNumber(5);
-        maxScore = 5 * 5 + 2 * 10 * 3 + 4 * 15 * 5;
+        maxScore = PlayerPrefs.GetInt("PlayerScore") + (5 * 5 + 2 * 10 * 3 + 4 * 15 * 5);
         gameController.SetActive(true);
         ObjectivePrompt.SetActive(true);
     }

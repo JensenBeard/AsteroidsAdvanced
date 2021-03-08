@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private int score;
-    [SerializeField] private int health;
+    //[SerializeField] private int score;
+    //[SerializeField] private int health;
     [SerializeField] private int waves;
     [SerializeField] private int requiriedScore;
 
@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
 
     private bool objectiveComplete;
 
+    private int score;
+    private int health;
+
     [SerializeField] private float leftMax = 21f;
     [SerializeField] private float leftMin = 19F;
     [SerializeField] private float topMax = 12f;
@@ -36,8 +39,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        score = 0;
-        health = 100;
+        score = PlayerPrefs.GetInt("PlayerScore");
+        health = PlayerPrefs.GetInt("PlayerHealth");
         scoreText.text = "Score: " + score;
         livesText.text = "HP: " + health;
         SpawnAsteroids();
@@ -62,6 +65,7 @@ public class GameController : MonoBehaviour
     void ScorePoints(int points) 
     {
         score += points;
+        PlayerPrefs.SetInt("PlayerScore", score);
         scoreText.text = "Score: " + score;
     }
     
@@ -134,6 +138,7 @@ public class GameController : MonoBehaviour
             GameOverFun();
         }
         livesText.text = "HP: " + health;
+        PlayerPrefs.SetInt("PlayerHealth", health);
 
     }
 
