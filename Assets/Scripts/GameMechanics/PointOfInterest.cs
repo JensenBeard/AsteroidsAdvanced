@@ -8,7 +8,12 @@ public class PointOfInterest : Subject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision");
-        Notify(poiName, NotificationType.AchievementUnlocked);
+        if (collision.gameObject.tag == "Player")
+        {
+            this.gameObject.SetActive(false);
+            Notify(poiName, NotificationType.TriggerActivated);
+        }
+            
+        
     }
 }

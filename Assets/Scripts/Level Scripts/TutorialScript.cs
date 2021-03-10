@@ -16,6 +16,7 @@ public class TutorialScript : MonoBehaviour
     private void Start()
     {
         gameController.GetComponent<GameController>().setAsteroidNumber(3);
+        
     }
     private void Update()
     {
