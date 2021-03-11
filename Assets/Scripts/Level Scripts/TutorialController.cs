@@ -72,6 +72,7 @@ public class TutorialController : MonoBehaviour
         if (curScore >= maxScore)
         {
             bool status = true;
+            PlayerPrefs.SetInt("PlayerScore", curScore);
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
             ObjectivePrompt.text = "Objective: Follow the Arrow to your next destination";
             NextLevelPrompt.SetActive(true);
