@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject gameController;
     public GameObject Observer;
 
@@ -18,7 +17,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private GameObject[] triggers;
     public GameObject NextLevelPrompt;
 
-    private int maxScore = 5 * 3 + 2 * 10 * 3 + 4 * 15 * 3;
+    private int maxScore = 255;
     private int progress;
 
     [SerializeField] private Text ObjectivePrompt;

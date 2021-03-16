@@ -867,7 +867,7 @@ MonoBehaviour:
   - {fileID: 1225351310}
   NextLevelPrompt: {fileID: 1503592186}
   ObjectivePrompt: {fileID: 1189126698}
-  introObject: {fileID: 0}
+  introObject: {fileID: 1414483644}
 --- !u!4 &383187172
 Transform:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1Script : MonoBehaviour
+public class Level3Script : MonoBehaviour
 {
     public GameObject gameController;
     public GameObject ObjectivePrompt;
@@ -19,7 +19,7 @@ public class Level1Script : MonoBehaviour
     void Update()
     {
         int curScore = gameController.GetComponent<GameController>().getScore();
-        if (curScore >= maxScore) 
+        if (curScore >= maxScore)
         {
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
