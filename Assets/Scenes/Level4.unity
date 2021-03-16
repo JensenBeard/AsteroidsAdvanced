@@ -2157,8 +2157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1602495994}
+  direction: {x: 0, y: 0}
   speed: 2
   rotationSpeed: 10
+  controller: {fileID: 172933680}
+  damage: 15
+  points: 50
   player: {fileID: 1444184221}
   bullet: {fileID: 4862599649129431739, guid: dc840c81a2e02f14eae445bc2ca91343, type: 3}
   bulletSpeed: 250
