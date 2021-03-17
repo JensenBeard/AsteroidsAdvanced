@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float thrust = 6f;
     private float rotationSpeed = -180f;
     private float maxSpeed = 4.5f;
+    public Animator animator;
 
 
     private Camera mainCam;
@@ -22,12 +23,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerSpawnLocation();
     }
-
+    private void Update()
+    {
+        enableTrail();
+    }
     private void FixedUpdate()
     {
         ControlRocket();
         CheckPosition();
-
+        
     }
 
     void playerSpawnLocation()
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0, 0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
         rb.AddForce(transform.up * thrust * Input.GetAxis("Vertical"));
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rb.velocity.y, -maxSpeed, maxSpeed));
+        
     }
 
     private void CheckPosition()
@@ -105,5 +110,18 @@ public class PlayerMovement : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0f, 0);
         rb.velocity = new Vector3(0f, 0f, 0f);
         rb.angularVelocity = 0;
+    }
+
+    void enableTrail() 
+    {
+        if (Input.GetKey("w"))
+        {
+            
+            animator.SetBool("IsForward",true);
+        }
+        else 
+        {
+            animator.SetBool("IsForward", false); ;
+        }
     }
 }
