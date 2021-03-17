@@ -150,10 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc367211bcf235545a3d7b4686ebc3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  health: 0
-  waves: 0
-  requiriedScore: 0
   AsteroidLarge: {fileID: 4135379020291546098, guid: a2330f802f911d74f9d982cc37f095a4,
     type: 3}
   AsteroidMed: {fileID: 5972618310358419916, guid: 00e3175372b07214d9f482b52967d6c1,
@@ -2957,6 +2953,7 @@ MonoBehaviour:
   gameController: {fileID: 138529007}
   ObjectivePrompt: {fileID: 1069392410}
   NextLevelPrompt: []
+  numAsteroids: 2
 --- !u!4 &2112410109
 Transform:
   m_ObjectHideFlags: 0

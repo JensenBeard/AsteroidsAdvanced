@@ -10,6 +10,8 @@ public class Level4Script : MonoBehaviour
     public GameObject EnemyShip;
     private int maxScore;
 
+    [SerializeField] private int numEnemys;
+    [SerializeField] private int numAsteroids;
     [SerializeField] private float leftMax = 21f;
     [SerializeField] private float leftMin = 19F;
     [SerializeField] private float topMax = 12f;
@@ -18,12 +20,12 @@ public class Level4Script : MonoBehaviour
     [SerializeField] private float rightMin = -19F;
     [SerializeField] private float botMax = -12f;
     [SerializeField] private float botMin = -11f;
-    [SerializeField] private int numEnemys;
+    
 
     private void Start()
     {
         gameController.GetComponent<GameController>().setAsteroidNumber(5);
-        maxScore = PlayerPrefs.GetInt("PlayerScore") + (5 * 5 + 2 * 10 * 3 + 4 * 15 * 5);
+        maxScore = PlayerPrefs.GetInt("PlayerScore") + (85*numAsteroids) + 50*numEnemys;
         gameController.SetActive(true);
         ObjectivePrompt.SetActive(true);
         SpawnEnemyShips();

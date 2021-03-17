@@ -14,7 +14,7 @@ public class LevelTrigger : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //set the direction the ship is travelling (0 top, 1 right, 2 bottom, 3, left)
-            GameController.entranceDirection = entranceDirection;
+            PlayerPrefs.SetInt("EntranceDir", entranceDirection);
         }
     }
 

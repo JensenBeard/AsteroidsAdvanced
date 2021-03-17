@@ -868,6 +868,7 @@ MonoBehaviour:
   NextLevelPrompt: {fileID: 1503592186}
   ObjectivePrompt: {fileID: 1189126698}
   introObject: {fileID: 1414483644}
+  numAsteroids: 2
 --- !u!4 &383187172
 Transform:
   m_ObjectHideFlags: 0
@@ -1883,8 +1884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc367211bcf235545a3d7b4686ebc3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 0
-  requiriedScore: 0
   AsteroidLarge: {fileID: 4135379020291546098, guid: a2330f802f911d74f9d982cc37f095a4,
     type: 3}
   AsteroidMed: {fileID: 5972618310358419916, guid: 00e3175372b07214d9f482b52967d6c1,

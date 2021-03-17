@@ -150,8 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc367211bcf235545a3d7b4686ebc3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 0
-  requiriedScore: 0
   AsteroidLarge: {fileID: 4135379020291546098, guid: a2330f802f911d74f9d982cc37f095a4,
     type: 3}
   AsteroidMed: {fileID: 5972618310358419916, guid: 00e3175372b07214d9f482b52967d6c1,
@@ -2078,7 +2076,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476101712}
   m_CullTransparentMesh: 0
---- !u!1 &1486541180
+--- !u!1 &1481238517
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2086,44 +2084,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1486541182}
-  - component: {fileID: 1486541181}
+  - component: {fileID: 1481238519}
+  - component: {fileID: 1481238518}
   m_Layer: 0
-  m_Name: TutorialManager
+  m_Name: Level3Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1486541181
+--- !u!114 &1481238518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486541180}
+  m_GameObject: {fileID: 1481238517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e118080f4ab1c468f37eb3730a9173, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a935e85c15a124e8f30f971eddff7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUps:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   gameController: {fileID: 113149397}
   ObjectivePrompt: {fileID: 211036340}
-  NextLevelPrompt: {fileID: 1650434126}
-  waitTime: 2
---- !u!4 &1486541182
+  NextLevelPrompt: []
+  EnemyShip: {fileID: 8033312986667658240, guid: a29a95689e1967746a35dde70c4ebcc1,
+    type: 3}
+  numAsteroids: 1
+  numEnemys: 3
+  leftMax: 21
+  leftMin: 19
+  topMax: 12
+  topMin: 11
+  rightMax: -21
+  rightMin: -19
+  botMax: -12
+  botMin: -11
+--- !u!4 &1481238519
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486541180}
+  m_GameObject: {fileID: 1481238517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9308469, y: -0.45245704, z: -1108.0469}
+  m_LocalPosition: {x: 3.832923, y: 1.0939587, z: -1108.8191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

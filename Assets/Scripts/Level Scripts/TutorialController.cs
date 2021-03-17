@@ -17,15 +17,18 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private GameObject[] triggers;
     public GameObject NextLevelPrompt;
 
-    private int maxScore = 255;
+    private int maxScore;
     private int progress;
 
     [SerializeField] private Text ObjectivePrompt;
     [SerializeField] private GameObject introObject;
+    [SerializeField] private int numAsteroids;
 
     private void Start()
     {
-        gameController.GetComponent<GameController>().setAsteroidNumber(3);
+       
+        gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
+        maxScore = 85 * numAsteroids;
         progress = 0;
         Debug.Log("This is running");
 

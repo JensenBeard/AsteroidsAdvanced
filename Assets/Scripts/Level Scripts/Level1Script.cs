@@ -8,10 +8,11 @@ public class Level1Script : MonoBehaviour
     public GameObject ObjectivePrompt;
     public GameObject[] NextLevelPrompt;
     private int maxScore;
+    [SerializeField] private int numAsteroids;
     private void Start()
     {
-        gameController.GetComponent<GameController>().setAsteroidNumber(5);
-        maxScore = PlayerPrefs.GetInt("PlayerScore") + (5 * 5 + 2 * 10 * 3 + 4 * 15 * 5);
+        gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
+        maxScore = PlayerPrefs.GetInt("PlayerScore") + (85*numAsteroids);
         gameController.SetActive(true);
         ObjectivePrompt.SetActive(true);
     }

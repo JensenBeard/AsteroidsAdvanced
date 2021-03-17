@@ -5,13 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    //[SerializeField] private int score;
-    //[SerializeField] private int health;
-    [SerializeField] private int waves;
-    [SerializeField] private int requiriedScore;
 
     private int numAsteroids;
-    public static int entranceDirection = -1;
 
     public GameObject AsteroidLarge;
     public GameObject AsteroidMed;
@@ -55,7 +50,6 @@ public class GameController : MonoBehaviour
             {
                 LevelTrigger[i].SetActive(true);
             }
-            
             
         }
     }

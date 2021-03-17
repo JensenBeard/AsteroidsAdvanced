@@ -653,8 +653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc367211bcf235545a3d7b4686ebc3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 0
-  requiriedScore: 0
   AsteroidLarge: {fileID: 4135379020291546098, guid: a2330f802f911d74f9d982cc37f095a4,
     type: 3}
   AsteroidMed: {fileID: 5972618310358419916, guid: 00e3175372b07214d9f482b52967d6c1,
@@ -1811,6 +1809,8 @@ MonoBehaviour:
   - {fileID: 758313527}
   EnemyShip: {fileID: 8033312986667658240, guid: a29a95689e1967746a35dde70c4ebcc1,
     type: 3}
+  numEnemys: 3
+  numAsteroids: 1
   leftMax: 21
   leftMin: 19
   topMax: 12
@@ -1819,7 +1819,6 @@ MonoBehaviour:
   rightMin: -19
   botMax: -12
   botMin: -11
-  numEnemys: 3
 --- !u!4 &1384209762
 Transform:
   m_ObjectHideFlags: 0

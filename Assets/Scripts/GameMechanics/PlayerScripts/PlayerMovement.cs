@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     void playerSpawnLocation()
     {
-        int direction = GameController.entranceDirection;
+        int direction = PlayerPrefs.GetInt("EntranceDir");
         switch (direction) {
             case 0:
                 transform.position = new Vector2(0, -9);
