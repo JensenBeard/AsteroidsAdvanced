@@ -23,6 +23,7 @@ public class AlienScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        controller = GameObject.FindWithTag("GameController");
         transform.Rotate(0, 0, 2 * rotationSpeed * Time.deltaTime);
     }
 

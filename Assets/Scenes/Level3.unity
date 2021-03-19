@@ -156,7 +156,7 @@ MonoBehaviour:
     type: 3}
   AsteroidSmall: {fileID: 3208673458765260404, guid: 46e6a82119064cb41ac2d59f5b291071,
     type: 3}
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 1618972342}
   LevelTrigger:
   - {fileID: 750272233}
   - {fileID: 1373518075}

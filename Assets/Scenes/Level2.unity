@@ -1418,7 +1418,7 @@ MonoBehaviour:
     type: 3}
   AsteroidSmall: {fileID: 3208673458765260404, guid: 46e6a82119064cb41ac2d59f5b291071,
     type: 3}
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 1836205291}
   LevelTrigger:
   - {fileID: 291969216}
   - {fileID: 309462212}
@@ -1933,7 +1933,7 @@ MonoBehaviour:
   gameController: {fileID: 841739277}
   ObjectivePrompt: {fileID: 598093335}
   NextLevelPrompt: []
-  numAsteroids: 0
+  numAsteroids: 2
 --- !u!4 &1178687175
 Transform:
   m_ObjectHideFlags: 0
