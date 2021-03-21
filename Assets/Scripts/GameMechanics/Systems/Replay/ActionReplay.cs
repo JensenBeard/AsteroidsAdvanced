@@ -26,11 +26,13 @@ public class ActionReplay : MonoBehaviour
             {
                 setTransform(0);
                 rb.isKinematic = true;
+
             }
             else 
             {
                 setTransform(actionReplayRecords.Count - 1);
                 rb.isKinematic = false;
+                Time.timeScale = 1;
             }
         }
     }
@@ -45,11 +47,17 @@ public class ActionReplay : MonoBehaviour
         {
             int nextIndex = currentReplayIndex + 1;
 
-            if(nextIndex < actionReplayRecords.Count) 
+            if (nextIndex < actionReplayRecords.Count)
             {
                 setTransform(nextIndex);
             }
+            else 
+            {
+                Time.timeScale = 0;
+            }
             
+
+
         }
         
     }
