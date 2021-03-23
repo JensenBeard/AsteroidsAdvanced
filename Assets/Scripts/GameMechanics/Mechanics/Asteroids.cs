@@ -73,19 +73,21 @@ public class Asteroids : MonoBehaviour
             if (asteroidStage == 3)
             {
                 //Spawn 2 med
+                //Play sound
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
 
             }
             else if (asteroidStage == 2)
             {
+                //Play sound
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
 
             }
             else if (asteroidStage == 1)
             {
-
+                //Play sound
             }
             controller.SendMessage("ScorePoints", points);
 
@@ -102,16 +104,17 @@ public class Asteroids : MonoBehaviour
             if (asteroidStage == 3)
             {
                 damage = 10;
-
+                //Add effect
             }
             else if (asteroidStage == 2)
             {
                 damage = 15;
-
+                //Add effect
             }
             else if (asteroidStage == 1)
             {
                 damage = 20;
+                //Add effect
             }
             controller.SendMessage("playerDamage", damage);
         }

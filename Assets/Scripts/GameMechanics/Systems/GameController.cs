@@ -74,7 +74,6 @@ public class GameController : MonoBehaviour
 
     float[] SafeSpawnAsteroids() 
     {
-
         float height;
         float width;
 
@@ -89,13 +88,11 @@ public class GameController : MonoBehaviour
             {
                 width = Random.Range(-18.0f, 18.0f);
                 height = Random.Range(topMin, topMax);
-
             }
             else
             {
                 width = Random.Range(-18.0f, 18.0f);
                 height = Random.Range(botMin, botMax);
-
             }
         }
         else 
@@ -105,13 +102,11 @@ public class GameController : MonoBehaviour
             {
                 height = Random.Range(-12.0f, 12.0f);
                 width = Random.Range(leftMin, leftMax);
-
             }
             else
             {
                 height = Random.Range(-12.0f, 12.0f);
                 width = Random.Range(rightMin, rightMax);
-
             }
         }
 

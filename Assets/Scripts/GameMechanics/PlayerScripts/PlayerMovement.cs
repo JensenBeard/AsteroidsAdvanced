@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        
         mainCam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         playerSpawnLocation();
