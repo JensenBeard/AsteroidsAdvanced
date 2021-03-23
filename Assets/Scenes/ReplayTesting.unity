@@ -2990,6 +2990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.2
+  rapidFireRate: 0.01
   firingPoint: {fileID: 437188327}
   fireballPrefab: {fileID: 3040631172976163959, guid: ec8b34acfe50bcf4ea1bb390f3226624,
     type: 3}
@@ -3172,7 +3173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028566470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.14, z: 10}
+  m_LocalPosition: {x: -0.11, y: -0.31, z: 10}
   m_LocalScale: {x: 1.9509156, y: 1.10946, z: 1}
   m_Children: []
   m_Father: {fileID: 923923430}
