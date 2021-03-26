@@ -18,67 +18,65 @@ public class TutorialController : MonoBehaviour
     public GameObject NextLevelPrompt;
 
     private int maxScore;
-    private int progress;
 
     [SerializeField] private Text ObjectivePrompt;
     [SerializeField] private GameObject introObject;
     [SerializeField] private int numAsteroids;
 
+    private TutorialProgress CurState;
+
     private void Start()
     {
-       
+        CurState = TutorialProgress.Initialise;
         gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
         maxScore = 85 * numAsteroids;
-        progress = 0;
         Debug.Log("This is running");
 
     }
     // Update is called once per frame
     private void Update()
     {
-
-        if (progress == 0)
-        {//intro
-            Invoke("activateTriggers", 5);
-            
-            progress++;
-        }
-        else if (progress == 1)
-        {//Collect 3 objects
-            
-            if (triggerCounter == 3)
-            {
-                progress++;
-            }
-
-        }
-        else if (progress == 2)
-        {
-
-            //Asteroids (Reach score)
-            if (waitTime <= 0)
-            {
-                PlayerPrefs.SetInt("PlayerHealth", playerHealth);
-                PlayerPrefs.SetInt("PlayerScore", playerScore);
-                gameController.SetActive(true);
-                ObjectivePrompt.text = "Objective: Press SPACE to fire photons to destroy all Asteroids!";
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-            
-        }
-
         int curScore = gameController.GetComponent<GameController>().getScore();
-        if (curScore >= maxScore)
+        switch (CurState) 
         {
-            bool status = true;
-            PlayerPrefs.SetInt("PlayerScore", curScore);
-            gameController.GetComponent<GameController>().setObjectiveComplete(status);
-            ObjectivePrompt.text = "Objective: Follow the Arrow to your next destination";
-            NextLevelPrompt.SetActive(true);
+            case TutorialProgress.Initialise://intro
+                Invoke("activateTriggers", 5);
+                CurState = TutorialProgress.Collection;
+                break;
+            case TutorialProgress.Collection://Collect 3 objects
+                if (triggerCounter == 3)
+                {
+                    CurState = TutorialProgress.LevelStart;
+                }
+                break;
+            case TutorialProgress.LevelStart://Asteroids (Reach score)
+                if (waitTime <= 0)
+                {
+                    PlayerPrefs.SetInt("PlayerHealth", playerHealth);
+                    PlayerPrefs.SetInt("PlayerScore", playerScore);
+                    gameController.SetActive(true);
+                    ObjectivePrompt.text = "Objective: Press SPACE to fire photons to destroy all Asteroids!";
+                   
+                    if (curScore >= maxScore)
+                    {
+                        CurState = TutorialProgress.LevelEnd;
+                    }
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
+                break;
+            case TutorialProgress.LevelEnd://Level Over Score reached
+                bool status = true;
+                PlayerPrefs.SetInt("PlayerScore", curScore);
+                gameController.GetComponent<GameController>().setObjectiveComplete(status);
+                ObjectivePrompt.text = "Objective: Follow the Arrow to your next destination";
+                NextLevelPrompt.SetActive(true);
+                break;
         }
+
+        
     }
 
 
@@ -92,4 +90,13 @@ public class TutorialController : MonoBehaviour
         }
         Observer.SetActive(true);
     }
+
+    
+}
+enum TutorialProgress
+{
+    Initialise,
+    Collection,
+    LevelStart,
+    LevelEnd
 }

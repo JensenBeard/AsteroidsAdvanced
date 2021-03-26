@@ -21,7 +21,7 @@ public class Shoot : MonoBehaviour
             _currentState = WeaponType.Basic;
             Debug.Log("1");
         }
-        else if (Input.GetKeyDown("2")) 
+        else if (Input.GetKeyDown("2"))
         {
             _currentState = WeaponType.RapidFire;
             Debug.Log("2");
@@ -96,12 +96,6 @@ public class Shoot : MonoBehaviour
         
         fireballClone3.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
 
-    }
-
-    private enum FireState 
-    {
-        STATE_IDLE,
-        STATE_FIRING
     }
 
     private enum WeaponType

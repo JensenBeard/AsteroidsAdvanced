@@ -46,15 +46,18 @@ public class GameController : MonoBehaviour
     {
         if (objectiveComplete) 
         {
-            for (int i = 0; i < LevelTrigger.Length; i++) 
-            {
-                LevelTrigger[i].SetActive(true);
-            }
+            triggerLevel();
             
         }
     }
 
-    
+    void triggerLevel() 
+    {
+        for (int i = 0; i < LevelTrigger.Length; i++)
+        {
+            LevelTrigger[i].SetActive(true);
+        }
+    }
 
     void ScorePoints(int points) 
     {
@@ -63,6 +66,7 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
     
+
     void SpawnAsteroids() 
     {
         for (int i = 0; i < numAsteroids; i++) 
