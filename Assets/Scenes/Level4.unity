@@ -1705,9 +1705,9 @@ GameObject:
   - component: {fileID: 1331917707}
   - component: {fileID: 1331917706}
   - component: {fileID: 1331917705}
-  - component: {fileID: 1331917704}
   - component: {fileID: 1331917703}
   - component: {fileID: 1331917702}
+  - component: {fileID: 1331917704}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Player
@@ -1793,10 +1793,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1331917701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04bb42b501a7a494bb3ef7788eac1b52, type: 3}
+  m_Script: {fileID: 11500000, guid: e26767369333a2f4c92e67a87970898a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.2
   firingPoint: {fileID: 1230679799}
   fireballPrefab: {fileID: 3040631172976163959, guid: ec8b34acfe50bcf4ea1bb390f3226624,
     type: 3}

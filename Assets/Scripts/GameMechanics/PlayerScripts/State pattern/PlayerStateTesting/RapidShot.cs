@@ -5,13 +5,13 @@ using UnityEngine;
 public class RapidShot : IShootState
 {
     ShootScript owner;
-    public float fireRate = 0.01f;
+    public float fireRate = 0.05f;
     float timeUntilFire;
     public RapidShot(ShootScript owner) { this.owner = owner; }
     public void Enter()
     {
         Debug.Log("Enter Test State");
-
+        return;
     }
 
     public void Tick()
@@ -20,7 +20,7 @@ public class RapidShot : IShootState
         {
             owner.changeState(new DefaultShot(owner));
         }
-        if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
+        if (Input.GetKey("space") && timeUntilFire < Time.time)
         {
             owner.SendMessage("Fire");
             timeUntilFire = Time.time + fireRate;
@@ -29,7 +29,7 @@ public class RapidShot : IShootState
 
     public void Exit()
     {
-        
+        return;
     }
 
 }

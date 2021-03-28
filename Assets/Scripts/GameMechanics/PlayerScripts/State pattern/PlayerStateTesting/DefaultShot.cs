@@ -5,7 +5,7 @@ using UnityEngine;
 public class DefaultShot : IShootState
 {
     ShootScript owner;
-    public float fireRate = 0.1f;
+    public float fireRate = 0.3f;
     float timeUntilFire;
     public DefaultShot(ShootScript owner) 
     { 
@@ -14,7 +14,7 @@ public class DefaultShot : IShootState
     public void Enter()
     {
         Debug.Log("Enter Test State");
-
+        return;
     }
 
     public void Tick()
@@ -33,5 +33,6 @@ public class DefaultShot : IShootState
     public void Exit()
     {
         Debug.Log("Exit Test State");
+        return;
     }
 }

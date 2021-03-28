@@ -12,7 +12,7 @@ public class SpreadShot : IShootState
     public void Enter()
     {
         Debug.Log("Enter Test State");
-
+        return;
     }
 
     public void Tick()
@@ -31,6 +31,6 @@ public class SpreadShot : IShootState
     public void Exit()
     {
         Debug.Log("Exit Test State");
-
+        return;
     }
 }
