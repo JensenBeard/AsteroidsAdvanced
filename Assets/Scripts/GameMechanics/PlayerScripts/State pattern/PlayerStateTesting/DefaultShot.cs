@@ -6,8 +6,7 @@ public class DefaultShot : IShootState
 {
     ShootScript owner;
     public float fireRate = 0.1f;
-    public Transform firingPoint;
-    public GameObject fireballPrefab;
+    float timeUntilFire;
     public DefaultShot(ShootScript owner) 
     { 
         this.owner = owner;
@@ -24,14 +23,15 @@ public class DefaultShot : IShootState
         {
             owner.changeState(new SpreadShot(owner));
         }
-        Debug.Log("Update Test State");
+        if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
+        {
+            owner.SendMessage("Fire");
+            timeUntilFire = Time.time + fireRate;
+        }
     }
 
     public void Exit()
     {
         Debug.Log("Exit Test State");
-
     }
-
-  
 }

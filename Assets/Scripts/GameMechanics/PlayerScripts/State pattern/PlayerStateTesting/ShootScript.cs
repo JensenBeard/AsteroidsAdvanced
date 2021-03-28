@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ShootScript : MonoBehaviour
 {
-    public float fireRate = 0.1f;
+    public float fireRate;
     public float rapidFireRate = 0.01f;
     public Transform firingPoint;
     public GameObject fireballPrefab;
-    float timeUntilFire;
+
 
 
 

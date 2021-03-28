@@ -6,6 +6,8 @@ public class SpreadShot : IShootState
 {
 
     ShootScript owner;
+    public float fireRate = 0.1f;
+    float timeUntilFire;
     public SpreadShot(ShootScript owner) { this.owner = owner; }
     public void Enter()
     {
@@ -15,7 +17,15 @@ public class SpreadShot : IShootState
 
     public void Tick()
     {
-        Debug.Log("Update Test State 2");
+        if (Input.GetKeyDown("q"))
+        {
+            owner.changeState(new RapidShot(owner));
+        }
+        if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
+        {
+            owner.SendMessage("FireSpread");
+            timeUntilFire = Time.time + fireRate;
+        }
     }
 
     public void Exit()
