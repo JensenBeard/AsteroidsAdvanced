@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ChrisTutorials.Persistent;
 
 public class Asteroids : MonoBehaviour
 {
@@ -8,12 +9,13 @@ public class Asteroids : MonoBehaviour
     [SerializeField] private float maxTorque = 3f;
     public Rigidbody2D rb;
     private Camera mainCam;
-
     [SerializeField] private float screenTop;
     [SerializeField] private float screenBottom;
     [SerializeField] private float screenLeft;
     [SerializeField] private float screenRight;
 
+    [SerializeField] private AudioClip _audioClip;
+    private Vector3 point = Vector3.zero;
     public int asteroidStage; //3 = large 2 = med 1 = small
     public GameObject asteroidsMedium;
     public GameObject asteroidsSmall;
@@ -73,22 +75,20 @@ public class Asteroids : MonoBehaviour
             if (asteroidStage == 3)
             {
                 //Spawn 2 med
-                //Play sound
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
                 Instantiate(asteroidsMedium, transform.position, transform.rotation);
 
             }
             else if (asteroidStage == 2)
             {
-                //Play sound
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
                 Instantiate(asteroidsSmall, transform.position, transform.rotation);
-
             }
             else if (asteroidStage == 1)
             {
-                //Play sound
+               
             }
+            AudioManager.Instance.Play(_audioClip, point);
             controller.SendMessage("ScorePoints", points);
 
             Destroy(gameObject);

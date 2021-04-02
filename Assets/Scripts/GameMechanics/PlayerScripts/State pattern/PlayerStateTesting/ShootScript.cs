@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ChrisTutorials.Persistent;
 
 public class ShootScript : MonoBehaviour
 {
     public Transform firingPoint;
     public GameObject fireballPrefab;
-
+    [SerializeField] private AudioClip _audioClip;
 
     _Shoot _shoot = new _Shoot();
+
     void Start()
     {
         _shoot.UpdateState(new DefaultShot(this));
@@ -26,13 +28,11 @@ public class ShootScript : MonoBehaviour
         _shoot.UpdateState(newState);
     }
 
-
-
-
     void Fire()
     {
         GameObject fireballClone = Instantiate(fireballPrefab, firingPoint.position, transform.rotation);
         fireballClone.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
+        AudioManager.Instance.Play(_audioClip, transform);
     }
 
     void FireSpread()
@@ -60,5 +60,6 @@ public class ShootScript : MonoBehaviour
 
         fireballClone3.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
 
+        AudioManager.Instance.Play(_audioClip, transform);
     }
 }

@@ -2989,11 +2989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26767369333a2f4c92e67a87970898a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.1
-  rapidFireRate: 0.01
   firingPoint: {fileID: 437188327}
   fireballPrefab: {fileID: 3040631172976163959, guid: ec8b34acfe50bcf4ea1bb390f3226624,
     type: 3}
+  _audioClip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!114 &1820803644
 MonoBehaviour:
   m_ObjectHideFlags: 0

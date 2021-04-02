@@ -140,6 +140,7 @@ MonoBehaviour:
   screenBottom: -12
   screenLeft: -21
   screenRight: 21
+  _audioClip: {fileID: 8300000, guid: 0cf45749d239af64b9771f7941c5deca, type: 3}
   asteroidStage: 3
   asteroidsMedium: {fileID: 5972618310358419916, guid: 00e3175372b07214d9f482b52967d6c1,
     type: 3}
