@@ -41,5 +41,14 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Load Menu");
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
+        uploadHighscore();
     }
+
+    public void uploadHighscore()
+    {
+        int score = PlayerPrefs.GetInt("PlayerScore");
+        string name = PlayerPrefs.GetString("Username");
+ 
+    }
+
 }

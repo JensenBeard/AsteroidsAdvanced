@@ -9,20 +9,22 @@ public class HighscoreTable : MonoBehaviour
     [SerializeField] private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
     private float templateHeight = 55f;
-    private void Awake()
+    private void OnEnable()
     {
         entryTemplate.gameObject.SetActive(false);
 
+        //Add any new entries here have loop through a list of new players in a playerpref json and remove any once finished.
+
         //Load Json from playerPrefs
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+       string jsonString = PlayerPrefs.GetString("highscoreTable");
+       Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+       Debug.Log(jsonString);
 
         //Add to Table
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList) {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
         }
-
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList) {
@@ -52,6 +54,7 @@ public class HighscoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
+    //Original Code for writing highscores to playerprefs
     private void AddHighscoreEntry(int score, string name) {
         //Create entry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };
@@ -113,17 +116,5 @@ public class HighscoreTable : MonoBehaviour
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
-    }
-
-    private class Highscores {
-        public List<HighscoreEntry> highscoreEntryList;
-        
-    }
-
-
-    [System.Serializable]
-    private class HighscoreEntry {
-        public int score;
-        public string name;
     }
 }

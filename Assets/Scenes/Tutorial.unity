@@ -1031,6 +1031,7 @@ MonoBehaviour:
   firingPoint: {fileID: 726944650}
   fireballPrefab: {fileID: 3040631172976163959, guid: ec8b34acfe50bcf4ea1bb390f3226624,
     type: 3}
+  _audioClip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!114 &508390587
 MonoBehaviour:
   m_ObjectHideFlags: 0

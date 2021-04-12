@@ -20,4 +20,11 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void uploadHighscore() {
+        int score = PlayerPrefs.GetInt("PlayerScore");
+        string name = PlayerPrefs.GetString("Username");
+    }
+
+   
+
 }
