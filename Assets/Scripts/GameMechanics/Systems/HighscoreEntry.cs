@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JensenBeard.Scoreboard {
+
     [Serializable]
     public struct HighscoreEntry 
     {
@@ -8,4 +8,3 @@ namespace JensenBeard.Scoreboard {
         public int entryScore;
     }
 
-}

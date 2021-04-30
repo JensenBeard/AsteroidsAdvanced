@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JensenBeard.Scoreboard 
-{
     public class HighscoreUI : MonoBehaviour
     {
         [SerializeField] private Text entryNameText;
@@ -17,6 +15,5 @@ namespace JensenBeard.Scoreboard
         }
     }
 
-}
 
 
