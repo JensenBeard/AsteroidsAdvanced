@@ -1,5 +1,11 @@
-﻿[System.Serializable]
-public class HighscoreEntry {
-    public int score;
-    public string name;
+﻿using System;
+
+namespace JensenBeard.Scoreboard {
+    [Serializable]
+    public struct HighscoreEntry 
+    {
+        public string entryName;
+        public int entryScore;
+    }
+
 }
