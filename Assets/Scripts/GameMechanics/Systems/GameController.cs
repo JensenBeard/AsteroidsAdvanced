@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score;
         livesText.text = "HP: " + health;
         SpawnAsteroids();
+        Debug.Log(PlayerPrefs.GetString("Username"));
     }
 
     // Update is called once per frame
@@ -46,8 +47,7 @@ public class GameController : MonoBehaviour
     {
         if (objectiveComplete) 
         {
-            triggerLevel();
-            
+            triggerLevel(); 
         }
     }
 

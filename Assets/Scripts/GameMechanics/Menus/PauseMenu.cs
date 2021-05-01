@@ -48,6 +48,8 @@ public class PauseMenu : MonoBehaviour
     {
         int score = PlayerPrefs.GetInt("PlayerScore");
         string name = PlayerPrefs.GetString("Username");
+
+        Debug.Log(name);
         HighscoreEntry newEntry;
         newEntry.entryName = name;
         newEntry.entryScore = score;

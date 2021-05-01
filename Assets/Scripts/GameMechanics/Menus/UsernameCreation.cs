@@ -14,6 +14,7 @@ public class UsernameCreation : MonoBehaviour
             userID = "___";
         }
         PlayerPrefs.SetString("Username", userID);
+        PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("Username"));
     }
 }

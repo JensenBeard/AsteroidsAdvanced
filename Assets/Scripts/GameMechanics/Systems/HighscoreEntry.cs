@@ -1,10 +1,10 @@
 ﻿using System;
 
 
-    [Serializable]
-    public struct HighscoreEntry 
-    {
-        public string entryName;
-        public int entryScore;
-    }
+[Serializable]
+public struct HighscoreEntry 
+{
+    public string entryName;
+    public int entryScore;
+}
 

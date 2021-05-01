@@ -24,6 +24,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private int numAsteroids;
 
     private TutorialProgress CurState;
+    private string username;
 
     private void Start()
     {
@@ -31,7 +32,8 @@ public class TutorialController : MonoBehaviour
         gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
         maxScore = 85 * numAsteroids;
         Debug.Log("This is running");
-
+        username = PlayerPrefs.GetString("Username");
+       
     }
     // Update is called once per frame
     private void Update()
@@ -53,7 +55,7 @@ public class TutorialController : MonoBehaviour
                 if (waitTime <= 0)
                 {
                     PlayerPrefs.SetInt("PlayerHealth", playerHealth);
-                    PlayerPrefs.SetInt("PlayerScore", playerScore);
+                    PlayerPrefs.SetInt("PlayerScore", playerScore );
                     gameController.SetActive(true);
                     ObjectivePrompt.text = "Objective: Press SPACE to fire photons to destroy all Asteroids!";
                    
@@ -70,8 +72,10 @@ public class TutorialController : MonoBehaviour
             case TutorialProgress.LevelEnd://Level Over Score reached
                 bool status = true;
                 PlayerPrefs.SetInt("PlayerScore", curScore);
+                PlayerPrefs.SetString("Username", username);
                 gameController.GetComponent<GameController>().setObjectiveComplete(status);
                 ObjectivePrompt.text = "Objective: Follow the Arrow to your next destination";
+                
                 NextLevelPrompt.SetActive(true);
                 break;
         }

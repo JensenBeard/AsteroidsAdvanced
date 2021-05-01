@@ -13,7 +13,6 @@ public class PointOfInterest : Subject
             this.gameObject.SetActive(false);
             Notify(poiName, NotificationType.TriggerActivated);
         }
-            
-        
+
     }
 }
