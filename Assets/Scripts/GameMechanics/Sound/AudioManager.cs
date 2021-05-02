@@ -194,7 +194,7 @@ namespace ChrisTutorials.Persistent
                     break;
 
                 case AudioChannel.Sound:
-                    masterMixer.SetFloat("SoundVolume", adjustedVolume);
+                    masterMixer.SetFloat("SFXVolume", adjustedVolume);
                     break;
 
                 case AudioChannel.Music:
@@ -236,7 +236,7 @@ namespace ChrisTutorials.Persistent
         {
             // Set the audio levels from player preferences
             int masterVolume = PlayerPrefs.GetInt("MasterVolume", 100);
-            int soundVolume = PlayerPrefs.GetInt("SoundVolume", 100);
+            int soundVolume = PlayerPrefs.GetInt("SFXVolume", 100);
             int musicVolume = PlayerPrefs.GetInt("MusicVolume", 100);
 
             // Update the audio mixer
@@ -246,5 +246,8 @@ namespace ChrisTutorials.Persistent
         }
 
         #endregion Private Methods
+
+        
+
     }
 }

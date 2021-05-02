@@ -6,7 +6,7 @@ public class Level4Script : MonoBehaviour
 {
     public GameObject gameController;
     public GameObject ObjectivePrompt;
-    public GameObject[] NextLevelPrompt;
+    public GameObject NextLevelPrompt;
     public GameObject EnemyShip;
     private int maxScore;
 

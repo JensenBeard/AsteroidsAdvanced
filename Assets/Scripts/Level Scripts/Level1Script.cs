@@ -6,7 +6,7 @@ public class Level1Script : MonoBehaviour
 {
     public GameObject gameController;
     public GameObject ObjectivePrompt;
-    public GameObject[] NextLevelPrompt;
+    public GameObject NextLevelPrompt;
     private int maxScore;
     [SerializeField] private int numAsteroids;
     private void Start()
@@ -25,6 +25,7 @@ public class Level1Script : MonoBehaviour
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
             ObjectivePrompt.SetActive(false);
+            NextLevelPrompt.SetActive(true);
         }
     }
 }

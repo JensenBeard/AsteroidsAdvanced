@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     {
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
+        uploadHighscore();
     }
 
     public void RestartGame()
@@ -20,11 +21,26 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void uploadHighscore() {
-        int score = PlayerPrefs.GetInt("PlayerScore");
-        string name = PlayerPrefs.GetString("Username");
+    public void LoadMenu()
+    {
+        Debug.Log("Load Menu");
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
-   
+    public void uploadHighscore()
+    {
+        int score = PlayerPrefs.GetInt("PlayerScore");
+        string name = PlayerPrefs.GetString("Username");
+
+        Debug.Log(name);
+        HighscoreEntry newEntry;
+        newEntry.entryName = name;
+        newEntry.entryScore = score;
+
+        HighScoreWriter.AddEntry(newEntry);
+    }
+
+
 
 }

@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ChrisTutorials.Persistent;
 public class PlayerMovement : MonoBehaviour
 {
     private float thrust = 6f;
     private float rotationSpeed = -180f;
     private float maxSpeed = 4.5f;
     public Animator animator;
-
+    [SerializeField] private AudioClip _audioClip;
 
     private Camera mainCam;
 
@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             animator.SetBool("IsForward",true);
+            AudioManager.Instance.Play(_audioClip, transform, 0.2f);
         }
         else 
         {
