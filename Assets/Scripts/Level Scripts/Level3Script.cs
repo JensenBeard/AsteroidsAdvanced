@@ -40,6 +40,7 @@ public class Level3Script : MonoBehaviour
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
             ObjectivePrompt.SetActive(false);
+            NextLevelPrompt.SetActive(true);
         }
         //Can maybe spawn some enemy ai at some point
     }

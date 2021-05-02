@@ -24,7 +24,7 @@ public class Level4Script : MonoBehaviour
 
     private void Start()
     {
-        gameController.GetComponent<GameController>().setAsteroidNumber(5);
+        gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
         maxScore = PlayerPrefs.GetInt("PlayerScore") + (85*numAsteroids) + 50*numEnemys;
         gameController.SetActive(true);
         ObjectivePrompt.SetActive(true);
@@ -40,6 +40,7 @@ public class Level4Script : MonoBehaviour
             bool status = true;
             gameController.GetComponent<GameController>().setObjectiveComplete(status);
             ObjectivePrompt.SetActive(false);
+            NextLevelPrompt.SetActive(true);
         }
         //Can maybe spawn some enemy ai at some point
     }

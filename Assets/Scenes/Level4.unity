@@ -794,7 +794,7 @@ MonoBehaviour:
     type: 3}
   AsteroidSmall: {fileID: 3208673458765260404, guid: 46e6a82119064cb41ac2d59f5b291071,
     type: 3}
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 1331917701}
   LevelTrigger:
   - {fileID: 140101397}
   - {fileID: 1923882805}
@@ -1053,8 +1053,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 239.62, y: -135.4}
-  m_SizeDelta: {x: 422.2356, y: 80.5224}
+  m_AnchoredPosition: {x: 325.2, y: -135.4}
+  m_SizeDelta: {x: 593.48364, y: 80.5224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212825215
 MonoBehaviour:
@@ -2614,8 +2614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 178.4, y: -48.9}
-  m_SizeDelta: {x: 299.7943, y: 72.10722}
+  m_AnchoredPosition: {x: 319.2, y: -48.9}
+  m_SizeDelta: {x: 581.4524, y: 72.10722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051888974
 MonoBehaviour:
