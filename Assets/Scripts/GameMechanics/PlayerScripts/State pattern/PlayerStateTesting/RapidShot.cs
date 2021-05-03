@@ -10,7 +10,7 @@ public class RapidShot : IShootState
     public RapidShot(ShootScript owner) { this.owner = owner; }
     public void Enter()
     {
-        Debug.Log("Enter Test State");
+        owner.SendMessage("updateWeaponRapid");
         return;
     }
 
@@ -22,7 +22,8 @@ public class RapidShot : IShootState
         }
         if (Input.GetKey("space") && timeUntilFire < Time.time)
         {
-            owner.SendMessage("Fire");
+            owner.SendMessage("FireRapid");
+            owner.SendMessage("updateWeaponRapid");
             timeUntilFire = Time.time + fireRate;
         }
     }

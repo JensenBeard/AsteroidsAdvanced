@@ -11,7 +11,7 @@ public class SpreadShot : IShootState
     public SpreadShot(ShootScript owner) { this.owner = owner; }
     public void Enter()
     {
-        Debug.Log("Enter Test State");
+        owner.SendMessage("updateWeaponSpread");
         return;
     }
 
@@ -24,13 +24,14 @@ public class SpreadShot : IShootState
         if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
         {
             owner.SendMessage("FireSpread");
+            owner.SendMessage("updateWeaponSpread");
+
             timeUntilFire = Time.time + fireRate;
         }
     }
 
     public void Exit()
     {
-        Debug.Log("Exit Test State");
         return;
     }
 }

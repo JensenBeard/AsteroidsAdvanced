@@ -7,6 +7,7 @@ public class TutorialController : MonoBehaviour
 {
     public GameObject gameController;
     public GameObject Observer;
+    
 
     public int playerHealth;
     public int playerScore;
@@ -19,6 +20,7 @@ public class TutorialController : MonoBehaviour
 
     private int maxScore;
 
+    [SerializeField] private GameObject helpPrompt;
     [SerializeField] private Text ObjectivePrompt;
     [SerializeField] private GameObject introObject;
     [SerializeField] private int numAsteroids;
@@ -57,7 +59,7 @@ public class TutorialController : MonoBehaviour
                     PlayerPrefs.SetInt("PlayerHealth", playerHealth);
                     PlayerPrefs.SetInt("PlayerScore", playerScore );
                     gameController.SetActive(true);
-                    ObjectivePrompt.text = "Objective: Press SPACE to fire photons to destroy all Asteroids!";
+                    ObjectivePrompt.text = "Objective: Press SPACE to fire photons to destroy all Asteroids! Change Weapons using 'Q' to switch to Spread and Rapid Fire";
                    
                     if (curScore >= maxScore)
                     {
@@ -88,6 +90,7 @@ public class TutorialController : MonoBehaviour
     {
         introObject.SetActive(false);
         ObjectivePrompt.gameObject.SetActive(true);
+        helpPrompt.gameObject.SetActive(true);
         for (int i = 0; i < triggers.Length; i++)
         {
             triggers[i].SetActive(true);

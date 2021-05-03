@@ -13,7 +13,7 @@ public class DefaultShot : IShootState
     }
     public void Enter()
     {
-        Debug.Log("Enter Test State");
+        owner.SendMessage("updateWeaponDefault");
         return;
     }
 
@@ -26,13 +26,14 @@ public class DefaultShot : IShootState
         if (Input.GetKeyDown("space") && timeUntilFire < Time.time)
         {
             owner.SendMessage("Fire");
+            owner.SendMessage("updateWeaponDefault");
             timeUntilFire = Time.time + fireRate;
         }
     }
 
     public void Exit()
     {
-        Debug.Log("Exit Test State");
         return;
     }
 }
+
