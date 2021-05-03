@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2085072989630647239}
   - component: {fileID: 338587753156266812}
   - component: {fileID: 7022792928564505455}
-  - component: {fileID: -2352720099244322192}
+  - component: {fileID: -5564262835091979920}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Bullet
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
---- !u!114 &-2352720099244322192
+--- !u!114 &-5564262835091979920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

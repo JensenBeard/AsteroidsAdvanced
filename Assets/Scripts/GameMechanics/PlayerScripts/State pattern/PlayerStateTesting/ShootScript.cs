@@ -40,8 +40,12 @@ public class ShootScript : MonoBehaviour
     //Fires the basic shot - no limit
     void Fire()
     {
-        GameObject fireballClone = Instantiate(fireballPrefab, firingPoint.position, transform.rotation);
-        fireballClone.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
+        var shot = FireballPool.Instance.Get();
+        shot.transform.rotation = transform.rotation;
+        shot.transform.position = firingPoint.position;
+       
+       // shot.GetComponent<Rigidbody2D>().AddForce(transform.up * 500);
+        shot.gameObject.SetActive(true);
         AudioManager.Instance.Play(_audioClip, transform);
     }
 
@@ -50,8 +54,11 @@ public class ShootScript : MonoBehaviour
     {
         if (rapidAmmoCount > 0)
         {
-            GameObject fireballClone = Instantiate(fireballPrefab, firingPoint.position, transform.rotation);
-            fireballClone.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
+            var shot = FireballPool.Instance.Get();
+            shot.transform.rotation = transform.rotation;
+            shot.transform.position = firingPoint.position;
+
+            shot.gameObject.SetActive(true);
             AudioManager.Instance.Play(_audioClip, transform);
             rapidAmmoCount -= 1;
         }
@@ -68,24 +75,33 @@ public class ShootScript : MonoBehaviour
             Quaternion rotation = transform.rotation;
 
 
-            GameObject fireballClone1 = Instantiate(fireballPrefab, firingPoint.position, transform.rotation);
+     
+
+            var shot1 = FireballPool.Instance.Get();
+            shot1.transform.rotation = transform.rotation;
+            shot1.transform.position = firingPoint.position;
+
+            shot1.gameObject.SetActive(true);
 
             Vector3 cone1 = transform.eulerAngles + new Vector3(0, 0, 30);
             rotation.eulerAngles = cone1;
 
-            GameObject fireballClone2 = Instantiate(fireballPrefab, firingPoint.position, rotation);
+            var shot2 = FireballPool.Instance.Get();
+            shot2.transform.rotation = rotation;
+            shot2.transform.position = firingPoint.position;
+
+            shot2.gameObject.SetActive(true);
 
             Vector3 cone2 = transform.eulerAngles + new Vector3(0, 0, -30);
             rotation.eulerAngles = cone2;
 
-            GameObject fireballClone3 = Instantiate(fireballPrefab, firingPoint.position, rotation);
+            var shot3 = FireballPool.Instance.Get();
+            shot3.transform.rotation = rotation;
+            shot3.transform.position = firingPoint.position;
+
+            shot3.gameObject.SetActive(true);
 
 
-            fireballClone1.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
-
-            fireballClone2.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
-
-            fireballClone3.GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
 
             AudioManager.Instance.Play(_audioClip, transform);
             spreadAmmoCount -= 1;

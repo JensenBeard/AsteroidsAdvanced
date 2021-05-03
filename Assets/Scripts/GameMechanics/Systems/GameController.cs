@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using ChrisTutorials.Persistent;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private AudioClip _audioClip;
 
     private int numAsteroids;
 
@@ -123,6 +125,7 @@ public class GameController : MonoBehaviour
 
     public void playerDamage(int damage) 
     {
+        
         health -= damage;
         if (health <= 0) {
             health = 0;
@@ -130,6 +133,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             GameOverFun();
         }
+        AudioManager.Instance.Play(_audioClip, playerObject.transform);
         livesText.text = "HP: " + health;
         PlayerPrefs.SetInt("PlayerHealth", health);
 

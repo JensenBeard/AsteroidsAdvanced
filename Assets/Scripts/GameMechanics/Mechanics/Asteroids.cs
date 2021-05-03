@@ -25,7 +25,7 @@ public class Asteroids : MonoBehaviour
     public GameObject controller;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         controller = GameObject.FindWithTag("GameController");
 

@@ -2,35 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fireball : MonoBehaviour
+public class EnemyFireball : MonoBehaviour
 {
     private float lifespan = 3f;
-    private float lifetime;
     public GameObject controller;
-
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
-        lifetime = 0f;
-        GetComponent<Rigidbody2D>().AddForce(transform.up * 700);
+
+        GetComponent<Rigidbody2D>().AddForce(transform.up * 350);
+        KillOldFireball(lifespan);
         controller = GameObject.Find("GameController");
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        FireballPool.Instance.ReturnToPool(this);
-        
+        Destroy(gameObject, 0.0f);
+
     }
 
-    
-
-    private void Update()
+    void KillOldFireball(float lifeSpan)
     {
-        lifetime += Time.deltaTime;
-        if (lifetime > lifespan) 
-        {
-            FireballPool.Instance.ReturnToPool(this);
-        }
+        Destroy(gameObject, lifeSpan);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,4 +35,3 @@ public class fireball : MonoBehaviour
         }
     }
 }
-   
