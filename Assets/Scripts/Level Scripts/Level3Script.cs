@@ -42,9 +42,9 @@ public class Level3Script : MonoBehaviour
             ObjectivePrompt.SetActive(false);
             NextLevelPrompt.SetActive(true);
         }
-        //Can maybe spawn some enemy ai at some point
     }
 
+    //Spawn AI ships similar to asteroids
     void SpawnEnemyShips()
     {
         for (int i = 0; i < numEnemys; i++)
@@ -54,6 +54,7 @@ public class Level3Script : MonoBehaviour
         }
     }
 
+    //Determines Spawn location outside of the player view.
     float[] SafeSpawnShip()
     {
 

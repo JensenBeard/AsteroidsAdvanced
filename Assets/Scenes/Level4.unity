@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 140101398}
   m_Layer: 0
   m_Name: NextLevelTrigger0
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceDirection: 0
+  transition: {fileID: 1282251995}
 --- !u!61 &140101399
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1054,8 +1055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325.2, y: -135.4}
-  m_SizeDelta: {x: 593.48364, y: 80.5224}
+  m_AnchoredPosition: {x: 431.78, y: -137.5}
+  m_SizeDelta: {x: 806.6018, y: 84.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212825215
 MonoBehaviour:
@@ -1880,7 +1881,7 @@ GameObject:
   - component: {fileID: 666938074}
   m_Layer: 0
   m_Name: NextLevelTrigger2
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1898,6 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceDirection: 2
+  transition: {fileID: 1282251995}
 --- !u!61 &666938075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2209,7 +2211,7 @@ GameObject:
   - component: {fileID: 745239868}
   m_Layer: 0
   m_Name: NextLevelTrigger3
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2227,6 +2229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceDirection: 3
+  transition: {fileID: 1282251995}
 --- !u!61 &745239869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2664,8 +2667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 319.2, y: -48.9}
-  m_SizeDelta: {x: 581.4524, y: 72.10722}
+  m_AnchoredPosition: {x: 431.8, y: -53.993}
+  m_SizeDelta: {x: 806.55225, y: 82.292465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051888974
 MonoBehaviour:
@@ -2848,6 +2851,7 @@ RectTransform:
   - {fileID: 684150207}
   - {fileID: 655090398}
   - {fileID: 430230075}
+  - {fileID: 1282251994}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3482,6 +3486,92 @@ Transform:
   m_Father: {fileID: 1331917708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1282251993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1069462415}
+    m_Modifications:
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -540
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568499, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568499, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9eab60255529b824b92dc6e29f222d1a, type: 3}
+--- !u!4 &1282251994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2379176821467568498, guid: 9eab60255529b824b92dc6e29f222d1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282251993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1282251995 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2379176821427222481, guid: 9eab60255529b824b92dc6e29f222d1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282251993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306692312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5907,7 +5997,7 @@ GameObject:
   - component: {fileID: 1923882806}
   m_Layer: 0
   m_Name: NextLevelTrigger1
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5925,6 +6015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceDirection: 1
+  transition: {fileID: 1282251995}
 --- !u!61 &1923882807
 BoxCollider2D:
   m_ObjectHideFlags: 0

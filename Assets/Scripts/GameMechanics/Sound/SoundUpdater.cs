@@ -13,12 +13,13 @@ public class SoundUpdater : MonoBehaviour
 
     private Slider slider;
 
+    //Assigns components.
     private void Awake()
     {
         slider = GetComponent<Slider>();
-       
     }
 
+    //Adjusts sound levels
     public void updateSoundLevels() 
     {
         int sliderVal = (int)(slider.value * 100);
@@ -29,6 +30,8 @@ public class SoundUpdater : MonoBehaviour
         soundLevelsText.text = channelName + ": " + sliderVal + " / " + "100";
 
     }
+
+
 
     
    

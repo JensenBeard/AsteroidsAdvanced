@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    //pauses game on keypress
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -22,6 +23,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //resumes game
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -29,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
+    //pauses game
     void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -37,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         
     }
 
+    //loads menu on button press
     public void LoadMenu() {
         Debug.Log("Load Menu");
         SceneManager.LoadScene(0);
@@ -44,6 +48,7 @@ public class PauseMenu : MonoBehaviour
         uploadHighscore();
     }
 
+    //uploads highscore to highsoreWriter
     public void uploadHighscore()
     {
         int score = PlayerPrefs.GetInt("PlayerScore");

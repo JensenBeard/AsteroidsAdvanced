@@ -24,7 +24,7 @@ public class Asteroids : MonoBehaviour
     public int points;
     public GameObject controller;
 
-    // Start is called before the first frame update
+    //Spawns with random direction and velocity
     void OnEnable()
     {
         controller = GameObject.FindWithTag("GameController");
@@ -36,12 +36,12 @@ public class Asteroids : MonoBehaviour
         rb.AddTorque(torque);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         checkPosition();
     }
-
+    //Checks if asteroids go off screen and adjusts position accordingly
     private void checkPosition() 
     {
         Vector2 newPos = transform.position;
@@ -66,6 +66,7 @@ public class Asteroids : MonoBehaviour
         transform.position = newPos;
     }
 
+    //Will split into smaller asteroid when shot giving points depending on stage.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet") || collision.CompareTag("EnemyBullet"))
@@ -97,6 +98,7 @@ public class Asteroids : MonoBehaviour
         
     }
 
+    //Will damage player on collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -104,17 +106,14 @@ public class Asteroids : MonoBehaviour
             if (asteroidStage == 3)
             {
                 damage = 10;
-                //Add effect
             }
             else if (asteroidStage == 2)
             {
                 damage = 15;
-                //Add effect
             }
             else if (asteroidStage == 1)
             {
                 damage = 20;
-                //Add effect
             }
             controller.SendMessage("playerDamage", damage);
         }

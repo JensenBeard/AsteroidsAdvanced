@@ -8,7 +8,7 @@ public class fireball : MonoBehaviour
     private float lifetime;
     public GameObject controller;
 
-    // Start is called before the first frame update
+    //Improved pooled version of the fireball script (Used for the player shooting)
     void OnEnable()
     {
         lifetime = 0f;
@@ -16,14 +16,14 @@ public class fireball : MonoBehaviour
         controller = GameObject.Find("GameController");
     }
 
+    //returns to queue instead of destroying 
     void OnCollisionEnter2D(Collision2D collision)
     {
         FireballPool.Instance.ReturnToPool(this);
         
     }
 
-    
-
+    //if fireball exeeds lifespan return to pool.
     private void Update()
     {
         lifetime += Time.deltaTime;
@@ -33,6 +33,7 @@ public class fireball : MonoBehaviour
         }
     }
 
+    //damage player on collision (dont hit yourself!)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

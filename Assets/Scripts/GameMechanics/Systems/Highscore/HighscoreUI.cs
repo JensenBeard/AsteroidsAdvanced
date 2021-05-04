@@ -8,6 +8,7 @@ public class HighscoreUI : MonoBehaviour
     [SerializeField] private Text entryNameText;
     [SerializeField] private Text entryScoreText;
 
+    //Updates save data to UI
     public void Initalise(HighscoreEntry highscoreEntry) 
     {
         entryNameText.text = highscoreEntry.entryName;

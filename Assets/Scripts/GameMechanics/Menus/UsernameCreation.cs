@@ -7,6 +7,7 @@ public class UsernameCreation : MonoBehaviour
 {
     public Text Username_field;
     
+    //Sets entered username to Username playerpref
     public void setUsername() 
     {
         string userID = Username_field.text.ToString();

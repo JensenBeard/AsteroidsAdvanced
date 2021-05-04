@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialSystem : Observer
 {
-    
+    //Attaches observers to object
     private void Start()
     {
         PlayerPrefs.DeleteAll();
@@ -14,6 +14,7 @@ public class TutorialSystem : Observer
         }
     }
 
+    //Reaction to a notification being sent
     public override void OnNotify(object value, NotificationType notificationType) 
     {
         if (notificationType == NotificationType.TriggerActivated) 

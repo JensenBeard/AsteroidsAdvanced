@@ -9,16 +9,19 @@ public class FireballPool : MonoBehaviour
     private Queue<fireball> fireballs = new Queue<fireball>();
     public static FireballPool Instance { get; private set; }
 
+    //Basic singleton implementation
     private void Awake()
     {
         Instance = this;
     }
 
+    //pre instantiates 50 fireballs
     private void OnEnable()
     {
         AddFireball(50);
     }
 
+    //Retrieve fireball and add more fireballs if needed
     public fireball Get() 
     {
         if (fireballs.Count == 0) 
@@ -29,6 +32,7 @@ public class FireballPool : MonoBehaviour
         return fireballs.Dequeue();
     }
 
+    //Add more fireballs
     private void AddFireball(int count) 
     {
         for (int i = 0; i < count; i++) 
@@ -39,6 +43,7 @@ public class FireballPool : MonoBehaviour
         }
     }
 
+    //Return object to pool.
     public void ReturnToPool(fireball fireball) 
     {
         fireball.gameObject.SetActive(false);

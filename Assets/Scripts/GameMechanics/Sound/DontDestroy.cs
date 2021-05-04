@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
+    //Sets BGM to not be destroyed
     private void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("music");

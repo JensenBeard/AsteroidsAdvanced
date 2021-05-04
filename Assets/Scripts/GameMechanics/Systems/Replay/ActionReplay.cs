@@ -9,17 +9,15 @@ public class ActionReplay : MonoBehaviour
     private List<ActionReplayRecord> actionReplayRecords = new List<ActionReplayRecord>();
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    //if R is pressed all actions the attached objects have taken are replayed to the player.
     void Update()
     {
-
-
 
         if (Input.GetKeyDown(KeyCode.R)) 
         {
@@ -40,6 +38,7 @@ public class ActionReplay : MonoBehaviour
         }
     }
 
+    //Records postition of object script is attached to.
     private void FixedUpdate()
     {
         if (isInReplayMode == false)
@@ -58,13 +57,12 @@ public class ActionReplay : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
-            
-
 
         }
         
     }
 
+    //Replays position from list of recorded postitions.
     private void setTransform(int index) 
     {
         currentReplayIndex = index;

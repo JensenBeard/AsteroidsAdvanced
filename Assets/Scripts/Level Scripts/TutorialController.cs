@@ -30,16 +30,18 @@ public class TutorialController : MonoBehaviour
 
     private void Start()
     {
+        //Initialise states and asteroids
         CurState = TutorialProgress.Initialise;
         gameController.GetComponent<GameController>().setAsteroidNumber(numAsteroids);
         maxScore = 85 * numAsteroids;
-        Debug.Log("This is running");
+        //Carry playername through to next stage avoiding erasure of playerprefs
         username = PlayerPrefs.GetString("Username");
        
     }
     // Update is called once per frame
     private void Update()
     {
+        //Determines the current stage of the tutorial dependant on conditions
         int curScore = gameController.GetComponent<GameController>().getScore();
         switch (CurState) 
         {
@@ -85,7 +87,7 @@ public class TutorialController : MonoBehaviour
         
     }
 
-
+    //Activates the tutorial objects for the observer to detect
     private void activateTriggers()
     {
         introObject.SetActive(false);
@@ -100,6 +102,8 @@ public class TutorialController : MonoBehaviour
 
     
 }
+
+//Tutorial State datatype.
 enum TutorialProgress
 {
     Initialise,

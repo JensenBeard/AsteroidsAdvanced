@@ -20,6 +20,7 @@ public class AlienScript : MonoBehaviour
     public float shootingDelay; //seconds
     private float lastShot = 0;
 
+    //Sets Params and rotation (to make animation look better)
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -27,6 +28,7 @@ public class AlienScript : MonoBehaviour
         transform.Rotate(0, 0, 2 * rotationSpeed * Time.deltaTime);
     }
 
+    //AI will constatnly shoot at the player until dead
     void Update()
     {
         if (Time.time > lastShot + shootingDelay) 
@@ -37,6 +39,7 @@ public class AlienScript : MonoBehaviour
         }        
     }
 
+    //Ai will move slowly towards the player
     private void FixedUpdate()
     {
         direction = (player.position - transform.position).normalized;
@@ -45,6 +48,7 @@ public class AlienScript : MonoBehaviour
 
     }
 
+    //Instantiates new bullet and fires at player.
     private void AIShooting() 
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
@@ -57,6 +61,7 @@ public class AlienScript : MonoBehaviour
 
     }
 
+    //Takes damage when player shoots it.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))

@@ -7,6 +7,8 @@ public static class HighScoreWriter
 {
     private static string SavePath => $"{Application.persistentDataPath}/highscores.json";
     private static int maxEntryLimit = 5;
+
+    //Retrieves JSON from file
     public static HighscoreSaveData GetSavedScores()
     {
         if (!File.Exists(SavePath))
@@ -23,6 +25,7 @@ public static class HighScoreWriter
         }
     }
 
+    //Saves JSON to file
     private static void SaveScores(HighscoreSaveData highscoreSaveData)
     {
         using (StreamWriter stream = new StreamWriter(SavePath))
@@ -32,6 +35,7 @@ public static class HighScoreWriter
         }
     }
 
+    //Adds a highscoreEntry to the existing list
     public static void AddEntry(HighscoreEntry highscoreEntry)
     {
         HighscoreSaveData savedScores = GetSavedScores();

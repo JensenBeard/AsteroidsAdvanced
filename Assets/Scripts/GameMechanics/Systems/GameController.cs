@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString("Username"));
     }
 
-    // Update is called once per frame
+    //Checks if level conditions have been met
     void Update()
     {
         if (objectiveComplete) 
@@ -53,22 +53,26 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //Activates the level triggers
     void triggerLevel() 
     {
         for (int i = 0; i < LevelTrigger.Length; i++)
         {
             LevelTrigger[i].SetActive(true);
+            
         }
     }
 
+    //Called from messages sent through other classes
     void ScorePoints(int points) 
     {
         score += points;
         PlayerPrefs.SetInt("PlayerScore", score);
+        Debug.Log(score);
         scoreText.text = "Score: " + score;
     }
     
-
+    //Instantiates Asteroids 
     void SpawnAsteroids() 
     {
         for (int i = 0; i < numAsteroids; i++) 
@@ -78,6 +82,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //Spawns asteroids outside of player view
     float[] SafeSpawnAsteroids() 
     {
         float height;
@@ -123,6 +128,7 @@ public class GameController : MonoBehaviour
         return location;
     }
 
+    //Damages Player when called.
     public void playerDamage(int damage) 
     {
         
