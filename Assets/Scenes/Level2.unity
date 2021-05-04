@@ -5900,8 +5900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 178.4, y: -48.9}
-  m_SizeDelta: {x: 299.7943, y: 72.10722}
+  m_AnchoredPosition: {x: 386.2, y: -48.9}
+  m_SizeDelta: {x: 715.3693, y: 72.10722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927295905
 MonoBehaviour:
@@ -6345,6 +6345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379176821467568499, guid: 9eab60255529b824b92dc6e29f222d1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eab60255529b824b92dc6e29f222d1a, type: 3}
